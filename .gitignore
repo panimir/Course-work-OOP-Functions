@@ -1,0 +1,7 @@
+# Ignore all in /build directory
+/build
+
+# Ignore /text directory
+/text
+
+TASK.txt
