@@ -1,11 +1,13 @@
 #ifndef FUNCITONS_FUNC
 #define FUNCTIONS_FUNC
 
-class Function
+#include <string>
+
+class my_Function
 {
 public:
-	virtual void printFunc() = 0;
-	virtual void info() = 0;
-}
+	virtual std::string printFunc() = 0;
+	virtual std::string info() = 0;
+};
 
 #endif // FUNCTIONS_FUNC

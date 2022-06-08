@@ -1,9 +1,18 @@
-#include <iostream>
+//#include "classes/Function.h"
+#include "classes/LinearFunc.h"
 
-using std::cin, std::cout;
+#include <iostream>
+#include <string>
 
 int main()
 {
-	cout << "Hello, course work!\n";
+	// Linear function
+	//LinearFunc linear(5, 7);
+	//std::cout << linear.printFunc() << '\n';
+	//std::cout << linear.info() << '\n';
+
+	// Sinus funciton
+
+
 	return 0;
 }
