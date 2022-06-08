@@ -1,28 +1,31 @@
-#include "Function.h"
+#ifndef LINEARFUNC_FUNC_H
+#define LINEARFUNC_FUNC_H
+
 #include <iostream>
 #include <string>
 
-class LinearFunc : public my_Function
-{
+#include "Function.h"
+
+class LinearFunc : public Function {
 private:
 	int slope, coef;
 
 public:
-	LinearFunc(int cslope, int ccoef)
+	LinearFunc(int s, int c)
+		: slope(s)
+		, coef(c)
 	{
-		slope = cslope;
-		coef = ccoef;
 	}
 	std::string printFunc() override
 	{
-		std::string s = "f(x) = " + std::to_string(slope) + "*x" +
-			 + "+" + "(" + std::to_string(coef) + ")";
-		return s;
+		return "f(x) = " + std::to_string(slope) + "*x" + "+" + "("
+			+ std::to_string(coef) + ")";
 	}
 	std::string info() override
 	{
-		return "It's a linear function with slope " +
-			std::to_string(slope) + " and coefficient -- " +
-			std::to_string(coef);
+		return "f(x) a linear function with slope " + std::to_string(slope)
+			+ " and coefficient -- " + std::to_string(coef);
 	}
 };
+
+#endif // LINEARFUNC_FUNC

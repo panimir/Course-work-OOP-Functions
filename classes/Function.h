@@ -1,9 +1,10 @@
-#ifndef FUNCITONS_FUNC
-#define FUNCTIONS_FUNC
+#pragma once
+#ifndef FUNCITONS_FUNC_H
+#define FUNCTIONS_FUNC_H
 
 #include <string>
 
-class my_Function
+class Function
 {
 public:
 	virtual std::string printFunc() = 0;
