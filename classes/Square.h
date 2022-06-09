@@ -5,7 +5,6 @@
 #include <string>
 
 #include "Function.h"
-//#include "LinearFunc.h"
 
 class Square : public Function {
 private:
@@ -19,13 +18,13 @@ public:
 
 	std::string printFunc() override
 	{
-		return "f(x) = cos(" + std::to_string(value) + "deg)";
+		return "f(x) = " + std::to_string(coef) + "x^2";
 	}
 
 	std::string info() override
 	{
-		return "f(x) is trigonometrical function cos(x), where x = "
-			+ std::to_string(value);
+		return "f(x) is a square function kx^2, where k = "
+			+ std::to_string(coef);
 	}
 };
 

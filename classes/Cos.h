@@ -25,7 +25,9 @@ public:
 	std::string info() override
 	{
 		return "f(x) is trigonometrical function cos(x), where x = "
-			+ std::to_string(value);
+			+ std::to_string(value)
+			+ " ( = " + std::to_string(cos((value * M_PI)/180)) + ")";
+;
 	}
 };
 

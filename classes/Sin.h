@@ -1,8 +1,8 @@
 #ifndef SIN_FUNC_H
 #define SIN_FUNC_H
 
-#include <iostream>
 #include <cmath>
+#include <iostream>
 #include <string>
 
 #include "Function.h"
@@ -25,7 +25,8 @@ public:
 	std::string info() override
 	{
 		return "f(x) is trigonometrical function sin(x), where x = "
-			+ std::to_string(value);
+			+ std::to_string(value)
+			+ " ( = " + std::to_string(sin((value * M_PI)/180)) + ")";
 	}
 };
 

@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 
-//#include "classes/Function.h"
 #include "classes/LinearFunc.h"
 #include "classes/Sin.h"
 #include "classes/Cos.h"
+#include "classes/Square.h"
 
 
 int main()
@@ -22,10 +22,17 @@ int main()
 	std::cout << '\n';
 
 	//Cosinus funciton
-	Sin cosinus(90);
+	Cos cosinus(90);
 	std::cout << cosinus.printFunc() << '\n';
 	std::cout << cosinus.info() << '\n';
 	std::cout << '\n';
+
+	//Square funciton
+	Square square(7);
+	std::cout << square.printFunc() << '\n';
+	std::cout << square.info() << '\n';
+	std::cout << '\n';
+
 
 	return 0;
 }
