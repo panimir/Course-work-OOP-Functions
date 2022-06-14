@@ -18,6 +18,7 @@ public:
 	std::string deriv() const override;
 	Cos(int value);
 	int getValue() const;
+	std::string operator -(int i);
 };
 
 #endif // CWF_COS_H

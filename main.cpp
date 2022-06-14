@@ -1,48 +1,181 @@
+#include <exception>
 #include <iostream>
 #include <string>
-#include <exception>
 
+#include "classes/Cos.h"
 #include "classes/Linear.h"
 #include "classes/Power.h"
 #include "classes/Sin.h"
-#include "classes/Cos.h"
+
+using namespace std;
+
+void linearBranch();
+void powerBranch();
+void sinBranch();
+void cosBranch();
 
 int main()
 {
-	try {
-		//Linear function
-		Linear linear(5, 7);
-		std::cout << linear.printFunc() << '\n';
-		std::cout << linear.info() << '\n';
-		std::cout << linear.deriv() << '\n';
-		std::cout << linear.calc(5) << '\n';
-		std::cout << '\n';
-
-		// Power funciton
-		Power power(3, 5, 7);
-		std::cout << power.printFunc() << '\n';
-		std::cout << power.info() << '\n';
-		std::cout << power.deriv() << '\n';
-		std::cout << power.calc(5) << '\n';
-		std::cout << '\n';
-
-		// Sin funciton
-		Sin sin(90);
-		std::cout << sin.printFunc() << '\n';
-		std::cout << sin.info() << '\n';
-		std::cout << sin.deriv() << '\n';
-		std::cout << '\n';
-
-		// Cos funciton
-		Cos cos(90);
-		std::cout << cos.printFunc() << '\n';
-		std::cout << cos.info() << '\n';
-		std::cout << cos.deriv() << '\n';
-		std::cout << '\n';
-	} catch (const std::exception& ex)
-	{
-		std::cerr << ex.what();
+	system("clear");
+	char pr;
+	cout << "Which function do you want to create?\n"
+		 << "1. Linear \n"
+		 << "2. Power \n"
+		 << "3. Sin \n"
+		 << "4. Cos \n"
+		 << "=> ";
+	cin >> pr;
+	switch (pr) {
+	case '1':
+		linearBranch();
+		break;
+	case '2':
+		powerBranch();
+		break;
+	case '3':
+		sinBranch();
+		break;
+	case '4':
+		cosBranch();
+		break;
 	}
-
 	return 0;
+}
+
+char secondChoise()
+{
+	char pr;
+	cout << "What do you want to do next? \n"
+		 << "1. Print funciton \n"
+		 << "2. Print function info \n"
+		 << "3. Find derivative \n"
+		 << "4. Calculate function \n"
+		 << "0. Exit \n"
+		 << "=> ";
+	cin >> pr;
+	return pr;
+}
+
+void linearBranch()
+{
+	int s, c;
+	cout << "Type slope and coefficient for linear funciton.\n=> ";
+	cin >> s >> c;
+	Linear linear(s, c);
+	cout << "The function is: ";
+	cout << linear.printFunc() << '\n';
+	char pr = 'x';
+	while (pr != '0') {
+		pr = secondChoise();
+		switch (pr) {
+			case '1':
+				cout << linear.printFunc() << '\n';
+				break;
+			case '2':
+				cout << linear.info() << '\n';
+				break;
+			case '3':
+				cout << linear.deriv() << '\n';
+				break;
+			case '4':
+				int x;
+				cout << "Type value for 'x'.\n=> ";
+				cin >> x;
+				cout << linear.calc(x) << '\n';
+				break;
+		}
+	}
+}
+
+void powerBranch()
+{
+	int s, c, d;
+	cout << "Type slope, coefficient and degree for funciton.\n=> ";
+	cin >> s >> c >> d;
+	Power power(s, c, d);
+	cout << "The function is: ";
+	cout << power.printFunc() << '\n';
+	char pr = 'x';
+	while (pr != '0') {
+		pr = secondChoise();
+		switch (pr) {
+			case '1':
+				cout << power.printFunc() << '\n';
+				break;
+			case '2':
+				cout << power.info() << '\n';
+				break;
+			case '3':
+				cout << power.deriv() << '\n';
+				break;
+			case '4':
+				int x;
+				cout << "Type value for 'x'.\n=> ";
+				cin >> x;
+				cout << power.calc(x) << '\n';
+				break;
+		}
+	}
+}
+
+void sinBranch()
+{
+	int v;
+	cout << "Type value for sin.\n=> ";
+	cin >> v;
+	Sin sin(v);
+	cout << "The function is: ";
+	cout << sin.printFunc() << '\n';
+	char pr = 'x';
+	while (pr != '0') {
+		pr = secondChoise();
+		switch (pr) {
+			case '1':
+				cout << sin.printFunc() << '\n';
+				break;
+			case '2':
+				cout << sin.info() << '\n';
+				break;
+			case '3':
+				cout << sin.deriv() << '\n';
+				break;
+			case '4':
+				int x;
+				cout << "Type value for 'x'.\n=> ";
+				cin >> x;
+				cout << sin.calc(x) << '\n';
+				break;
+		}
+	}
+}
+
+void cosBranch()
+{
+	int v;
+	cout << "Type value for cos.\n=> ";
+	cin >> v;
+	Cos cos(v);
+	cout << "The function is: ";
+	cout << cos.printFunc() << '\n';
+	char pr = 'x';
+	while (pr != '0') {
+		pr = secondChoise();
+		switch (pr) {
+			case '1':
+				cout << cos.printFunc() << '\n';
+				break;
+			case '2':
+				cout << cos.info() << '\n';
+				break;
+			case '3':
+				cout << cos.deriv() << '\n';
+				break;
+			case '4':
+				int x;
+				cout << "Type value for 'x'.\n=> ";
+				cin >> x;
+				cout << cos.calc(x) << '\n';
+				break;
+		}
+	}
 }

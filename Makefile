@@ -1,5 +1,4 @@
 # Simple and stupid makefile
-
 CC = g++
 CFLAGS = -Wall -g -c
 
@@ -10,7 +9,6 @@ all:
 	$(CC) $(CFLAGS) Sin.cpp -o build/Sin.o
 	$(CC) $(CFLAGS) Cos.cpp -o build/Cos.o
 	$(CC) build/Linear.o build/Power.o build/Sin.o build/Cos.o build/main.o -o build/cwork
-
 run:
 	build/cwork
 clear:
