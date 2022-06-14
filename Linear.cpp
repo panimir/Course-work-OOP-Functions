@@ -21,13 +21,16 @@ std::string Linear::info() const
 
 std::string Linear::deriv() const
 {
-	return Linear::printFunc() +
-		"\nf(x)' = " + std::to_string(getSlope());
+	return "f(" + std::to_string(slope) + "x" + "+" + "("
+		+ std::to_string(coef) + ")" + ")'"
+		+ " = " + std::to_string(getSlope());
 }
 
 std::string Linear::calc(int x) const
 {
-	return std::to_string(slope * x + coef);
+	return std::to_string(slope) + std::to_string(x) + "+" + "("
+		+ std::to_string(coef) + ")" + " = "
+		+ std::to_string(slope * x + coef);
 }
 
 int Linear::getSlope() const { return slope; }

@@ -22,14 +22,17 @@ std::string Power::info() const
 
 std::string Power::deriv() const
 {
-	return Power::printFunc()
-		+ "\nf(x)' = " + std::to_string(getSlope() * degree) + "x^"
+	return "f(" + std::to_string(slope) + "x^" + std::to_string(degree)
+		+ "+" + "(" + std::to_string(coef) + ")"
+		+ ")' = " + std::to_string(getSlope() * degree) + "x^"
 		+ std::to_string(degree - 1);
 }
 
 std::string Power::calc(int x) const
 {
-	return std::to_string((int) (slope * pow(x, degree) + coef));
+	return std::to_string(slope) + std::to_string(x) + "^"
+		+ std::to_string(degree) + "+" + "(" + std::to_string(coef) + ")"
+		+ " = " + std::to_string(slope * (int)pow(x, degree) + coef);
 }
 
 int Power::getSlope() const { return slope; }

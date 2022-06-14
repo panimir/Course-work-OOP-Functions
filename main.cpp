@@ -13,33 +13,45 @@ void linearBranch();
 void powerBranch();
 void sinBranch();
 void cosBranch();
+char firstChoise();
+char secondChoise();
 
 int main()
 {
 	system("clear");
+	char pr = 'x';
+	while (pr != '0') {
+		pr = firstChoise();
+		switch (pr) {
+		case '1':
+			linearBranch();
+			break;
+		case '2':
+			powerBranch();
+			break;
+		case '3':
+			sinBranch();
+			break;
+		case '4':
+			cosBranch();
+			break;
+		}
+	}
+	return 0;
+}
+
+char firstChoise()
+{
 	char pr;
 	cout << "Which function do you want to create?\n"
 		 << "1. Linear \n"
 		 << "2. Power \n"
 		 << "3. Sin \n"
 		 << "4. Cos \n"
+		 << "0. Exit \n"
 		 << "=> ";
 	cin >> pr;
-	switch (pr) {
-	case '1':
-		linearBranch();
-		break;
-	case '2':
-		powerBranch();
-		break;
-	case '3':
-		sinBranch();
-		break;
-	case '4':
-		cosBranch();
-		break;
-	}
-	return 0;
+	return pr;
 }
 
 char secondChoise()
@@ -50,7 +62,7 @@ char secondChoise()
 		 << "2. Print function info \n"
 		 << "3. Find derivative \n"
 		 << "4. Calculate function \n"
-		 << "0. Exit \n"
+		 << "0. Create anothe function \n"
 		 << "=> ";
 	cin >> pr;
 	return pr;
@@ -68,23 +80,24 @@ void linearBranch()
 	while (pr != '0') {
 		pr = secondChoise();
 		switch (pr) {
-			case '1':
-				cout << linear.printFunc() << '\n';
-				break;
-			case '2':
-				cout << linear.info() << '\n';
-				break;
-			case '3':
-				cout << linear.deriv() << '\n';
-				break;
-			case '4':
-				int x;
-				cout << "Type value for 'x'.\n=> ";
-				cin >> x;
-				cout << linear.calc(x) << '\n';
-				break;
+		case '1':
+			cout << linear.printFunc() << '\n';
+			break;
+		case '2':
+			cout << linear.info() << '\n';
+			break;
+		case '3':
+			cout << linear.deriv() << '\n';
+			break;
+		case '4':
+			int x;
+			cout << "Type value for 'x'.\n=> ";
+			cin >> x;
+			cout << linear.calc(x) << '\n';
+			break;
 		}
 	}
+	system("clear");
 }
 
 void powerBranch()
@@ -99,23 +112,24 @@ void powerBranch()
 	while (pr != '0') {
 		pr = secondChoise();
 		switch (pr) {
-			case '1':
-				cout << power.printFunc() << '\n';
-				break;
-			case '2':
-				cout << power.info() << '\n';
-				break;
-			case '3':
-				cout << power.deriv() << '\n';
-				break;
-			case '4':
-				int x;
-				cout << "Type value for 'x'.\n=> ";
-				cin >> x;
-				cout << power.calc(x) << '\n';
-				break;
+		case '1':
+			cout << power.printFunc() << '\n';
+			break;
+		case '2':
+			cout << power.info() << '\n';
+			break;
+		case '3':
+			cout << power.deriv() << '\n';
+			break;
+		case '4':
+			int x;
+			cout << "Type value for 'x'.\n=> ";
+			cin >> x;
+			cout << power.calc(x) << '\n';
+			break;
 		}
 	}
+	system("clear");
 }
 
 void sinBranch()
@@ -130,20 +144,21 @@ void sinBranch()
 	while (pr != '0') {
 		pr = secondChoise();
 		switch (pr) {
-			case '1':
-				cout << sin.printFunc() << '\n';
-				break;
-			case '2':
-				cout << sin.info() << '\n';
-				break;
-			case '3':
-				cout << sin.deriv() << '\n';
-				break;
-			case '4':
-				cout << sin.calc(v) << '\n';
-				break;
+		case '1':
+			cout << sin.printFunc() << '\n';
+			break;
+		case '2':
+			cout << sin.info() << '\n';
+			break;
+		case '3':
+			cout << sin.deriv() << '\n';
+			break;
+		case '4':
+			cout << sin.calc(v) << '\n';
+			break;
 		}
 	}
+	system("clear");
 }
 
 void cosBranch()
@@ -158,18 +173,19 @@ void cosBranch()
 	while (pr != '0') {
 		pr = secondChoise();
 		switch (pr) {
-			case '1':
-				cout << cos.printFunc() << '\n';
-				break;
-			case '2':
-				cout << cos.info() << '\n';
-				break;
-			case '3':
-				cout << cos.deriv() << '\n';
-				break;
-			case '4':
-				cout << cos.calc(v) << '\n';
-				break;
+		case '1':
+			cout << cos.printFunc() << '\n';
+			break;
+		case '2':
+			cout << cos.info() << '\n';
+			break;
+		case '3':
+			cout << cos.deriv() << '\n';
+			break;
+		case '4':
+			cout << cos.calc(v) << '\n';
+			break;
 		}
 	}
+	system("clear");
 }
