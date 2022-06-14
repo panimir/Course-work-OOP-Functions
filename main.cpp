@@ -140,10 +140,7 @@ void sinBranch()
 				cout << sin.deriv() << '\n';
 				break;
 			case '4':
-				int x;
-				cout << "Type value for 'x'.\n=> ";
-				cin >> x;
-				cout << sin.calc(x) << '\n';
+				cout << sin.calc(v) << '\n';
 				break;
 		}
 	}
@@ -171,10 +168,7 @@ void cosBranch()
 				cout << cos.deriv() << '\n';
 				break;
 			case '4':
-				int x;
-				cout << "Type value for 'x'.\n=> ";
-				cin >> x;
-				cout << cos.calc(x) << '\n';
+				cout << cos.calc(v) << '\n';
 				break;
 		}
 	}
