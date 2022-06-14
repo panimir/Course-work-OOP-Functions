@@ -1,5 +1,5 @@
-#ifndef SIN_FUNC_H
-#define SIN_FUNC_H
+#ifndef CWF_SIN_H
+#define CWF_SIN_H
 
 #include <cmath>
 #include <iostream>
@@ -12,22 +12,12 @@ private:
 	int value;
 
 public:
-	Sin(int v)
-		: value(v)
-	{
-	}
-
-	std::string printFunc() override
-	{
-		return "f(x) = sin(" + std::to_string(value) + "deg)";
-	}
-
-	std::string info() override
-	{
-		return "f(x) is trigonometrical function sin(x), where x = "
-			+ std::to_string(value)
-			+ " ( = " + std::to_string(sin((value * M_PI)/180)) + ")";
-	}
+	std::string printFunc() const override;
+	std::string info() const override;
+	std::string deriv() const override;
+	std::string calc(int value) const override;
+	Sin(int value);
+	int getValue() const;
 };
 
-#endif // SIN_FUNC
+#endif // CWF_SIN_H

@@ -1,10 +1,9 @@
-#ifndef CWF_SQUARE_H
-#define CWF_SQUARE_H
+#ifndef CWF_POWER_H
+#define CWF_POWER_H
 
 #include <iostream>
 #include <string>
 
-#include "Function.h"
 #include "Linear.h"
 
 class Power : public Linear {
@@ -15,6 +14,7 @@ public:
 	std::string printFunc() const override;
 	std::string info() const override;
 	std::string deriv() const override;
+	std::string calc(int x) const override;
 	Power(int slope, int coef, int degree);
 
 	int getSlope() const;
@@ -22,4 +22,4 @@ public:
 	int getDegree() const;
 };
 
-#endif // CWF_SQUARE_H
+#endif // CWF_POWER_H

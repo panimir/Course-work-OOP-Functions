@@ -1,8 +1,8 @@
-#ifndef COS_FUNC_H
-#define COS_FUNC_H
+#ifndef CWF_COS_H
+#define CWF_COS_H
 
-#include <iostream>
 #include <cmath>
+#include <iostream>
 #include <string>
 
 #include "Function.h"
@@ -12,23 +12,12 @@ private:
 	int value;
 
 public:
-	Cos(int v)
-		: value(v)
-	{
-	}
-
-	std::string printFunc() override
-	{
-		return "f(x) = cos(" + std::to_string(value) + "deg)";
-	}
-
-	std::string info() override
-	{
-		return "f(x) is trigonometrical function cos(x), where x = "
-			+ std::to_string(value)
-			+ " ( = " + std::to_string(cos((value * M_PI)/180)) + ")";
-;
-	}
+	std::string printFunc() const override;
+	std::string info() const override;
+	std::string calc(int value) const override;
+	std::string deriv() const override;
+	Cos(int value);
+	int getValue() const;
 };
 
-#endif // COS_FUNC
+#endif // CWF_COS_H

@@ -1,14 +1,15 @@
-#pragma once
-#ifndef FUNCITONS_FUNC_H
-#define FUNCTIONS_FUNC_H
+//#pragma once
+#ifndef CWF_FUNCTION_H
+#define CWF_FUNCTION_H
 
 #include <string>
 
-class Function
-{
+class Function {
 public:
-	virtual std::string printFunc() = 0;
-	virtual std::string info() = 0;
+	virtual std::string printFunc() const = 0;
+	virtual std::string info() const = 0;
+	virtual std::string deriv() const = 0;
+	virtual std::string calc(int) const = 0;
 };
 
-#endif // FUNCTIONS_FUNC
+#endif // CWF_FUNCTION_H

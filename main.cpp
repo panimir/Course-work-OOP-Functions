@@ -1,38 +1,48 @@
 #include <iostream>
 #include <string>
+#include <exception>
 
-#include "classes/LinearFunc.h"
+#include "classes/Linear.h"
+#include "classes/Power.h"
 #include "classes/Sin.h"
 #include "classes/Cos.h"
-#include "classes/Square.h"
-
 
 int main()
 {
-	//Linear function
-	LinearFunc linear(5, 7);
-	std::cout << linear.printFunc() << '\n';
-	std::cout << linear.info() << '\n';
-	std::cout << '\n';
+	try {
+		//Linear function
+		Linear linear(5, 7);
+		std::cout << linear.printFunc() << '\n';
+		std::cout << linear.info() << '\n';
+		std::cout << linear.deriv() << '\n';
+		std::cout << linear.calc(5) << '\n';
+		std::cout << '\n';
 
-	//Sinus funciton
-	Sin sinus(90);
-	std::cout << sinus.printFunc() << '\n';
-	std::cout << sinus.info() << '\n';
-	std::cout << '\n';
+		// Power funciton
+		Power power(3, 5, 7);
+		std::cout << power.printFunc() << '\n';
+		std::cout << power.info() << '\n';
+		std::cout << power.deriv() << '\n';
+		std::cout << power.calc(5) << '\n';
+		std::cout << '\n';
 
-	//Cosinus funciton
-	Cos cosinus(90);
-	std::cout << cosinus.printFunc() << '\n';
-	std::cout << cosinus.info() << '\n';
-	std::cout << '\n';
+		// Sin funciton
+		Sin sin(90);
+		std::cout << sin.printFunc() << '\n';
+		std::cout << sin.info() << '\n';
+		std::cout << sin.deriv() << '\n';
+		std::cout << '\n';
 
-	//Square funciton
-	Square square(7);
-	std::cout << square.printFunc() << '\n';
-	std::cout << square.info() << '\n';
-	std::cout << '\n';
-
+		// Cos funciton
+		Cos cos(90);
+		std::cout << cos.printFunc() << '\n';
+		std::cout << cos.info() << '\n';
+		std::cout << cos.deriv() << '\n';
+		std::cout << '\n';
+	} catch (const std::exception& ex)
+	{
+		std::cerr << ex.what();
+	}
 
 	return 0;
 }
