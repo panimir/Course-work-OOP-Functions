@@ -2,10 +2,11 @@
 #include <iostream>
 #include <string>
 
-#include "classes/Cos.h"
-#include "classes/Linear.h"
-#include "classes/Power.h"
-#include "classes/Sin.h"
+#include "classes/Cos.hpp"
+#include "classes/Linear.hpp"
+#include "classes/Power.hpp"
+#include "classes/Sin.hpp"
+#include "classes/Oper.hpp"
 
 using namespace std;
 
@@ -13,6 +14,9 @@ void linearBranch();
 void powerBranch();
 void sinBranch();
 void cosBranch();
+void sumBranch();
+void multBranch();
+void divBranch();
 char firstChoise();
 char secondChoise();
 
@@ -35,6 +39,15 @@ int main()
 		case '4':
 			cosBranch();
 			break;
+		case '5':
+			sumBranch();
+			break;
+		case '6':
+			multBranch();
+			break;
+		case '7':
+			divBranch();
+			break;
 		}
 	}
 	return 0;
@@ -43,11 +56,14 @@ int main()
 char firstChoise()
 {
 	char pr;
-	cout << "Which function do you want to create?\n"
-		 << "1. Linear \n"
-		 << "2. Power \n"
-		 << "3. Sin \n"
-		 << "4. Cos \n"
+	cout << "What do you want to do?\n"
+		 << "1. Make linear function \n"
+		 << "2. Make power function \n"
+		 << "3. Make sin function \n"
+		 << "4. Make cos function \n"
+		 << "5. Calculate sum of functions \n"
+		 << "6. Calculate multiplication of functions \n"
+		 << "7. Calculate difference of functions \n"
 		 << "0. Exit \n"
 		 << "=> ";
 	cin >> pr;
@@ -62,7 +78,7 @@ char secondChoise()
 		 << "2. Print function info \n"
 		 << "3. Find derivative \n"
 		 << "4. Calculate function \n"
-		 << "0. Create anothe function \n"
+		 << "0. Create another function \n"
 		 << "=> ";
 	cin >> pr;
 	return pr;
@@ -188,4 +204,38 @@ void cosBranch()
 		}
 	}
 	system("clear");
+}
+
+void sumBranch()
+{
+	Oper oper;
+	string f1, f2;
+	cout << "Type f1(x) = ";
+	cin >> f1;
+	cout << "Type f2(x) = ";
+	cin >> f2;
+	cout << "f1(x)+f2(x) = " << oper.getSum(f1, f2) << '\n';
+}
+
+void multBranch()
+{
+	Oper oper;
+	string f1, f2;
+	cout << "Type f1(x) = ";
+	cin >> f1;
+	cout << "Type f2(x) = ";
+	cin >> f2;
+	cout << "f1(x)*f2(x) = " << oper.getMult(f1, f2) << '\n';
+}
+
+void divBranch()
+{
+	string f1, f2;
+	cout << "Type f1(x) = ";
+	cin >> f1;
+	cout << "Type f2(x) = ";
+	cin >> f2;
+	Oper of1(f1);
+	Oper of3 = of1-f2;
+	cout << "f1(x)-f2(x) = " << of3.getStr() << '\n';
 }

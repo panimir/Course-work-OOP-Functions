@@ -1,4 +1,4 @@
-#include "classes/Cos.h"
+#include "classes/Cos.hpp"
 
 Cos::Cos(int value)
 	: Function()
@@ -19,13 +19,13 @@ std::string Cos::info() const
 
 std::string Cos::deriv() const
 {
-	return "f(cos(" + std::to_string(value) + "))' = -sin("
+	return "f(cos(" + std::to_string(value) + "deg))' = -sin("
 		+ std::to_string(value) + "deg)";
 }
 
 std::string Cos::calc(int value) const
 {
-	return "f(cos(" + std::to_string(value) + "))"
+	return "f(cos(" + std::to_string(value) + "deg)) = "
 		+ std::to_string(cos((value * M_PI) / 180));
 }
 

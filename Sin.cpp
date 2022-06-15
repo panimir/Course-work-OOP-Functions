@@ -1,4 +1,4 @@
-#include "classes/Sin.h"
+#include "classes/Sin.hpp"
 
 Sin::Sin(int value)
 	: Function()
@@ -19,13 +19,13 @@ std::string Sin::info() const
 
 std::string Sin::deriv() const
 {
-	return "f(sin(" + std::to_string(value) + "))' = cos("
+	return "f(sin(" + std::to_string(value) + "deg))' = cos("
 		+ std::to_string(value) + "deg)";
 }
 
 std::string Sin::calc(int value) const
 {
-	return "f(sin(" + std::to_string(value) + ")) = "
+	return "f(sin(" + std::to_string(value) + "deg)) = "
 		+ std::to_string(sin((value * M_PI) / 180));
 }
 

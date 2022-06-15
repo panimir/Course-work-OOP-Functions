@@ -1,4 +1,4 @@
-#include "classes/Linear.h"
+#include "classes/Linear.hpp"
 
 Linear::Linear(int slope, int coef)
 	: Function()
@@ -28,7 +28,7 @@ std::string Linear::deriv() const
 
 std::string Linear::calc(int x) const
 {
-	return std::to_string(slope) + std::to_string(x) + "+" + "("
+	return std::to_string(slope) + "*" + std::to_string(x) + "+" + "("
 		+ std::to_string(coef) + ")" + " = "
 		+ std::to_string(slope * x + coef);
 }

@@ -1,4 +1,4 @@
-#include "classes/Power.h"
+#include "classes/Power.hpp"
 #include <cmath>
 
 Power::Power(int slope, int coef, int degree)
@@ -30,7 +30,7 @@ std::string Power::deriv() const
 
 std::string Power::calc(int x) const
 {
-	return std::to_string(slope) + std::to_string(x) + "^"
+	return std::to_string(slope) + "*" + std::to_string(x) + "^"
 		+ std::to_string(degree) + "+" + "(" + std::to_string(coef) + ")"
 		+ " = " + std::to_string(slope * (int)pow(x, degree) + coef);
 }

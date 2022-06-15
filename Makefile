@@ -8,7 +8,9 @@ all:
 	$(CC) $(CFLAGS) Power.cpp -o build/Power.o
 	$(CC) $(CFLAGS) Sin.cpp -o build/Sin.o
 	$(CC) $(CFLAGS) Cos.cpp -o build/Cos.o
-	$(CC) build/Linear.o build/Power.o build/Sin.o build/Cos.o build/main.o -o build/cwork
+	$(CC) $(CFLAGS) Oper.cpp -o build/Oper.o
+	$(CC) build/Linear.o build/Power.o build/Sin.o build/Cos.o \
+		  build/main.o build/Oper.o -o build/cwork
 run:
 	build/cwork
 clear:
