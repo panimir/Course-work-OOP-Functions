@@ -18,7 +18,17 @@ std::string Oper::getMult(
 
 std::string Oper::getStr() const { return f; }
 
+Oper Oper::operator+(const std::string& f2)
+{
+	return Oper("(" + f + ")" + "+" + "(" + f2 + ")");
+}
+
 Oper Oper::operator-(const std::string& f2)
 {
 	return Oper("(" + f + ")" + "-" + "(" + f2 + ")");
+}
+
+Oper Oper::operator*(const std::string& f2)
+{
+	return Oper("(" + f + ")" + "*" + "(" + f2 + ")");
 }

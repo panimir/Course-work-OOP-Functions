@@ -48,6 +48,7 @@ int main()
 			break;
 		}
 	}
+	system("clear");
 	return 0;
 }
 

@@ -12,7 +12,9 @@ public:
 	std::string getSum(const std::string &f1, const std::string &f2) const;
 	std::string getMult(const std::string &f1, const std::string &f2) const;
 	std::string getStr() const;
-	Oper operator-(const std::string& f2);
+	Oper operator+(const std::string& f1);
+	Oper operator-(const std::string& f1);
+	Oper operator*(const std::string& f1);
 };
 
 #endif // CWF_OPER_H
