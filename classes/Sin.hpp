@@ -2,7 +2,6 @@
 #define CWF_SIN_H
 
 #include <cmath>
-#include <iostream>
 #include <string>
 
 #include "Function.hpp"

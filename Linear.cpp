@@ -22,8 +22,8 @@ std::string Linear::info() const
 std::string Linear::deriv() const
 {
 	return "f(" + std::to_string(slope) + "x" + "+" + "("
-		+ std::to_string(coef) + ")" + ")'"
-		+ " = " + std::to_string(getSlope());
+		+ std::to_string(coef) + ")" + ")'" + " = "
+		+ std::to_string(getSlope());
 }
 
 std::string Linear::calc(int x) const

@@ -1,6 +1,7 @@
 #include <exception>
 #include <iostream>
 #include <string>
+#include <typeinfo>
 
 #include "classes/Cos.hpp"
 #include "classes/Linear.hpp"
@@ -22,31 +23,37 @@ int main()
 {
 	system("clear");
 	char pr = 'x';
-	while (pr != '0') {
-		pr = firstChoise();
-		switch (pr) {
-		case '1':
-			linearBranch();
-			break;
-		case '2':
-			powerBranch();
-			break;
-		case '3':
-			sinBranch();
-			break;
-		case '4':
-			cosBranch();
-			break;
-		case '5':
-			sumBranch();
-			break;
-		case '6':
-			multBranch();
-			break;
-		case '7':
-			divBranch();
-			break;
+	try {
+		while (pr != '0') {
+			pr = firstChoise();
+			switch (pr) {
+			case '1':
+				linearBranch();
+				break;
+			case '2':
+				powerBranch();
+				break;
+			case '3':
+				sinBranch();
+				break;
+			case '4':
+				cosBranch();
+				break;
+			case '5':
+				sumBranch();
+				break;
+			case '6':
+				multBranch();
+				break;
+			case '7':
+				divBranch();
+				break;
+			default:
+				std::cout << '\n';
+			}
 		}
+	} catch (const std::exception& problem) {
+		std::cerr << problem.what();
 	}
 	system("clear");
 	return 0;
@@ -73,7 +80,7 @@ char secondChoise()
 {
 	char pr;
 	std::cout << "What do you want to do next? \n"
-			  << "1. Print funciton \n"
+			  << "1. Print function \n"
 			  << "2. Print function info \n"
 			  << "3. Find derivative \n"
 			  << "4. Calculate function \n"
@@ -86,7 +93,7 @@ char secondChoise()
 void linearBranch()
 {
 	int s, c;
-	std::cout << "Type slope and coefficient for linear funciton.\n=> ";
+	std::cout << "Type slope and coefficient for linear function.\n=> ";
 	std::cin >> s >> c;
 	Linear linear(s, c);
 	std::cout << "\n=> The function is: ";
@@ -118,7 +125,7 @@ void linearBranch()
 void powerBranch()
 {
 	int s, c, d;
-	std::cout << "Type slope, coefficient and degree for funciton.\n=> ";
+	std::cout << "Type slope, coefficient and degree for function.\n=> ";
 	std::cin >> s >> c >> d;
 	Power power(s, c, d);
 	std::cout << "\n=> "

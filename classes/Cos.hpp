@@ -2,7 +2,6 @@
 #define CWF_COS_H
 
 #include <cmath>
-#include <iostream>
 #include <string>
 
 #include "Function.hpp"

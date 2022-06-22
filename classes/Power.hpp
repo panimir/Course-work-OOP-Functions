@@ -1,7 +1,6 @@
 #ifndef CWF_POWER_H
 #define CWF_POWER_H
 
-#include <iostream>
 #include <string>
 
 #include "Linear.hpp"
